@@ -118,7 +118,7 @@ class ConsoleInterface:
             amount = float(self.get_user_input("Cantidad a depositar: ")) 
 
             if balance := self.atm.deposit(amount):
-                print(f"Depósito exitoso. Saldo actual: {balance:.2f}")
+                print(f"Depósito exitoso. Saldo actual: ${balance:.2f}")
             else:
                 print("Error al depositar")
         except ValueError:
@@ -129,7 +129,7 @@ class ConsoleInterface:
             amount = float(self.get_user_input("Cantidad a retirar: "))
 
             if balance := self.atm.withdraw(amount):
-                print(f"Retiro exitoso. Saldo actual: {balance:.2f}")
+                print(f"Retiro exitoso. Saldo actual: ${balance:.2f}")
             else:
                 print("Error al retirar")
         except ValueError:
@@ -137,7 +137,7 @@ class ConsoleInterface:
 
     def handle_balance(self) -> None:
         if balance := self.atm.get_balance():
-            print(f"Saldo actual: {balance:.2f}")
+            print(f"Saldo actual: ${balance:.2f}")
         else:
             print("No hay cuenta activa") 
 
